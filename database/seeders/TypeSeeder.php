@@ -5,16 +5,19 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+// Importo il Model
+
+use App\Models\Type;
+
+class TypeSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this -> call([ProjectsSeeder::class]);
-        $this -> call([TypeSeeder::class]);
+        Type::factory () -> count (10) -> create();
     }
 }
