@@ -17,7 +17,8 @@ class ProjectsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => fake() -> words(3),
+            'company' => fake() -> company ()
         ];
     }
 }
