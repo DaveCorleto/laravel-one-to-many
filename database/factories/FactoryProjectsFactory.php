@@ -17,8 +17,8 @@ class ProjectsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake() -> words(3),
-            'company' => fake() -> company ()
+            'title' => $this->faker->words(3, true), 
+            'company' => $this->faker->company(),
         ];
     }
 }
