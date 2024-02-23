@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 // IMporto il Model
 use App\Models\Project;
+use App\Models\Type;
 
 class ProjectsSeeder extends Seeder
 {
@@ -22,10 +23,15 @@ class ProjectsSeeder extends Seeder
         -> make()
         -> each(function($projects) {
 
-        $project = Project :: inRandomOrder() -> first();
-        $type -> project() -> associate($project);
+        $type = Type :: inRandomOrder() -> first();
+        $project -> type() -> associate($type);
+    
+        $project -> save();
 
-        $type -> save();
+        // $project = Project :: inRandomOrder() -> first();
+        // $type -> project() -> associate($project);
+
+        // $type -> save();
     });
             
     }
