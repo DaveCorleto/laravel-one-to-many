@@ -17,21 +17,16 @@ class ProjectsSeeder extends Seeder
      */
     public function run()
     {   
-
+        // Project::factory () -> count (10) -> create();
         Project :: factory()
         -> count(10)
         -> make()
-        -> each(function($projects) {
+        -> each(function($project) {
 
         $type = Type :: inRandomOrder() -> first();
         $project -> type() -> associate($type);
     
         $project -> save();
-
-        // $project = Project :: inRandomOrder() -> first();
-        // $type -> project() -> associate($project);
-
-        // $type -> save();
     });
             
     }
