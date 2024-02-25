@@ -11,8 +11,8 @@ class Project extends Model
 
     // Questa funzione descrive la relazione tra Project e Types:
     // Per ogni Project c'è un solo Type 
-    public function type() {
-
+    public function type()
+    {
         return $this -> belongsTo(Type :: class);
     }
 
